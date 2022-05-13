@@ -1,13 +1,96 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #1a2639;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: #3e4a61;
+  border-radius: 8px;
+  padding: 40px 50px;
+  margin: 20px 0;
+}
+
+.btn {
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  width: 160px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  /* background-color: #202142; */
+}
+
+.btn-secondary {
+  /* background: #ff6a95; */
+}
+
+.btn:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+header {
+  background-color: #3e4a61;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.league-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.league-list .btn {
+  margin: 12px 0;
+}
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.team-list .btn {
+  margin: 12px 0;
+  color: #000;
+}
+
+.team-list-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  display: none;
+}
+
+.team-list-container {
+  width: 80%;
+  min-height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(62, 74, 97, 1);
+  border-radius: 8px;
+  text-align: center;
 }

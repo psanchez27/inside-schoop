@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./components/Header";
+import SavedTeamsList from "./components/SavedTeamsList";
+import TeamSelectForm from "./components/TeamSelectForm";
+import TeamSelectList from "./components/TeamSelectList";
 
-function App() {
+const App = () => {
+  const [myList, setMyList] = useState()
+  const [leagueSelect, setLeagueSelect] = useState()
+
+
+
+  const showList = (league) => {
+    //set leage select
+    setLeagueSelect(league.league)
+    //set pop up window
+    const teamList = document.querySelector('.team-list-bg')
+    //show team list window
+    teamList.style.display = 'block'
+    //close team list window
+    window.addEventListener("click", e => e.target === teamList ? teamList.style.display='none' : false);
+  }
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <TeamSelectForm showList={showList}/>
+        <SavedTeamsList list={myList}/>
+      </div>
+      <TeamSelectList league={leagueSelect}/>
+    </>
   );
-}
+};
 
 export default App;
